@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql:///ljj_test?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username:
+    password:
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  # 配置jpa信息
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  # 模板解析器配置
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+logging:
+  level:
+    root: debug
