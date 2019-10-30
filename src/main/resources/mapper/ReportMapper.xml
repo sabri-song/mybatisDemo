@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.demo.dao.ReportMapper">
+
+
+    <select id="getReport1" resultType="java.util.Map" parameterType="com.mybatis.demo.dto.SearchData">
+        SELECT DATE(app_time)AS time ,count(*) AS num FROM timew
+        <![CDATA[GROUP BY time having time>#{searchData.minDate} and time < #{searchData.maxDate}]]>
+    </select>
+    <select id="getReport2" resultType="java.util.Map">
+        SELECT DATE(app_time)AS time ,count(*) AS num FROM timew
+        <![CDATA[GROUP BY time having time>#{minDate} and time < #{maxDate}]]>
+    </select>
+    <select id="getReport3" resultType="java.util.Map">
+        SELECT DATE(app_time)AS time ,count(*) AS num FROM timew
+        <![CDATA[GROUP BY time having time>#{minDate} and time < #{maxDate}]]>
+    </select>
+</mapper>
